@@ -17,8 +17,9 @@ and EFO ontologies run:
 `wget -O ols-config.yaml https://www.ebi.ac.uk/ols/api/ols-config\?ids\=aero,efo`
 
 
-If you want to load an ontology from a local file on disk then add the ontology
-to this directory and set `ontology_purl: file:///opt/ols/<filename>.owl`.
+If you want to load an ontology from a local file on disk, add the ontology
+to this directory then set `ontology_purl: file:///opt/ols/<filename>.owl` and
+add `ADD *.owl ${OLS_HOME}` to the Dockerfile before the first `RUN` command.
 Alternately you can use a URL to load an ontology from the web e.g.
 `ontology_purl: http://purl.obolibrary.org/obo/duo.owl`
 
