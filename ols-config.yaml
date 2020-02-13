@@ -2,37 +2,43 @@
 "@context":
 
 ontologies:
-
-## DUO
-
-  - id: duo
+  - title: The Data Use Ontology
     preferredPrefix: DUO
-    title: Data use ontology
-    uri: http://purl.obolibrary.org/obo/duo.owl
     description: DUO is an ontology which represent data use conditions.
     homepage: https://github.com/EBISPOT/DUO
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: http://purl.obolibrary.org/obo/duo.owl
+    id: duo
+    mailing_list: null
+    ontology_purl: http://purl.obolibrary.org/obo/duo.owl
+    reasoner: NONE
+    label_property: http://www.w3.org/2000/01/rdf-schema#label
     definition_property:
-      - http://purl.obolibrary.org/obo/IAO_0000115
-    synonym_property:
-      - http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+      - http://purl.org/dc/elements/1.1/description
+    synonym_property: []
     hierarchical_property:
       - http://purl.obolibrary.org/obo/BFO_0000050
-      - http://purl.obolibrary.org/obo/RO_0002202
     base_uri:
       - http://purl.obolibrary.org/obo/DUO_
-    reasoner: EL
-    oboSlims: false
-    ontology_purl: file:///opt/ols/duo.owl
 
-  - id: aero
+  - title: Adverse Event Reporting Ontology
     preferredPrefix: AERO
-    title: Adverse Event Reporting Ontology
-    uri: http://purl.obolibrary.org/obo/aero.owl
     description: >-
       The Adverse Event Reporting Ontology (AERO) is an ontology aimed at
       supporting clinicians at the time of data entry, increasing quality and accuracy
       of reported adverse events.
     homepage: http://purl.obolibrary.org/obo/aero
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: http://purl.obolibrary.org/obo/aero.owl
+    id: aero
+    mailing_list: null
+    ontology_purl: http://purl.obolibrary.org/obo/aero.owl
+    reasoner: EL
+    label_property: http://www.w3.org/2000/01/rdf-schema#label
     definition_property:
       - http://purl.obolibrary.org/obo/IAO_0000115
     synonym_property:
@@ -41,10 +47,3 @@ ontologies:
       - http://purl.obolibrary.org/obo/BFO_0000050
     base_uri:
       - http://purl.obolibrary.org/obo/AERO_
-    annotations: null
-    oboSlims: false
-    preferredRootTerms: []
-    mailing_list: null
-    reasoner: EL
-    label_property: http://www.w3.org/2000/01/rdf-schema#label
-    ontology_purl: http://purl.obolibrary.org/obo/aero.owl

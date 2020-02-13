@@ -4,7 +4,6 @@ ENV OLS_HOME /opt/ols
 ENV JAVA_OPTS "-Xmx1g"
 ENV SOLR_VERSION 5.5.3
 
-ADD *.owl ${OLS_HOME}
 ADD ols-config.yaml ${OLS_HOME}
 
 ## Start MongoDB
