@@ -14,7 +14,7 @@ You can download the configuration in YAML format for one or multiple
 ontologies from EBI OLS API. For example, to download the configuration for AERO
 and EFO ontologies run:
 
-`wget -O ols-config.yaml https://www.ebi.ac.uk/ols/api/ols-config\?ids\=aero,efo`
+`wget -O ols-config.yaml "https://www.ebi.ac.uk/ols/api/ols-config?ids=aero,efo"`
 
 
 If you want to load an ontology from a local file on disk, add the ontology
