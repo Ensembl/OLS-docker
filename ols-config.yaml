@@ -1,49 +1,134 @@
-
 "@context":
 
 ontologies:
-  - title: The Data Use Ontology
-    preferredPrefix: DUO
-    description: DUO is an ontology which represent data use conditions.
-    homepage: https://github.com/EBISPOT/DUO
+  - title: "Adverse Event Reporting Ontology"
+    preferredPrefix: "AERO"
+    description: "The Adverse Event Reporting Ontology (AERO) is an ontology aimed at\
+    \ supporting clinicians at the time of data entry, increasing quality and accuracy\
+    \ of reported adverse events"
+    homepage: "http://purl.obolibrary.org/obo/aero"
     annotations: null
     oboSlims: false
     preferredRootTerms: []
-    uri: http://purl.obolibrary.org/obo/duo.owl
-    id: duo
+    uri: "http://purl.obolibrary.org/obo/aero.owl"
+    id: "aero"
     mailing_list: null
-    ontology_purl: http://purl.obolibrary.org/obo/duo.owl
-    reasoner: NONE
-    label_property: http://www.w3.org/2000/01/rdf-schema#label
+    ontology_purl: "http://purl.obolibrary.org/obo/aero.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
     definition_property:
-      - http://purl.org/dc/elements/1.1/description
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/AERO_"
+  - title: "Basic Formal Ontology"
+    preferredPrefix: "BFO"
+    description: "The upper level ontology upon which OBO Foundry ontologies are built."
+    homepage: "http://basic-formal-ontology.org/"
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/bfo.owl"
+    id: "bfo"
+    mailing_list: "https://groups.google.com/forum/#!forum/bfo-discuss"
+    ontology_purl: "http://purl.obolibrary.org/obo/bfo.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/BFO_"
+  - title: "Plant Environment Ontology"
+    preferredPrefix: "EO"
+    description: "A structured, controlled vocabulary which describes the treatments,\
+    \ growing conditions, and/or study types used in plant biology experiments."
+    homepage: "http://planteome.org/"
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/eo.owl"
+    id: "eo"
+    mailing_list: null
+    ontology_purl: "http://purl.obolibrary.org/obo/eo.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/EO_"
+  - title: "The Data Use Ontology"
+    preferredPrefix: "DUO"
+    description: "DUO is an ontology which represent data use conditions."
+    homepage: "https://github.com/EBISPOT/DUO"
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/duo.owl"
+    id: "duo"
+    mailing_list: null
+    ontology_purl: "http://purl.obolibrary.org/obo/duo.owl"
+    reasoner: "NONE"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.org/dc/elements/1.1/description"
     synonym_property: []
     hierarchical_property:
-      - http://purl.obolibrary.org/obo/BFO_0000050
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
     base_uri:
-      - http://purl.obolibrary.org/obo/DUO_
-
-  - title: Adverse Event Reporting Ontology
-    preferredPrefix: AERO
-    description: >-
-      The Adverse Event Reporting Ontology (AERO) is an ontology aimed at
-      supporting clinicians at the time of data entry, increasing quality and accuracy
-      of reported adverse events.
-    homepage: http://purl.obolibrary.org/obo/aero
+      - "http://purl.obolibrary.org/obo/DUO_"
+  - title: "Evidence & Conclusion Ontology (ECO)"
+    preferredPrefix: "ECO"
+    description: "The Evidence & Conclusion Ontology (ECO) describes types of scientific\
+    \ evidence within the biological research domain that arise from laboratory experiments,\
+    \ computational methods, literature curation, or other means."
+    homepage: "https://github.com/evidenceontology/evidenceontology/"
     annotations: null
     oboSlims: false
     preferredRootTerms: []
-    uri: http://purl.obolibrary.org/obo/aero.owl
-    id: aero
+    uri: "http://purl.obolibrary.org/obo/eco.owl"
+    id: "eco"
     mailing_list: null
-    ontology_purl: http://purl.obolibrary.org/obo/aero.owl
-    reasoner: EL
-    label_property: http://www.w3.org/2000/01/rdf-schema#label
+    ontology_purl: "http://purl.obolibrary.org/obo/eco.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
     definition_property:
-      - http://purl.obolibrary.org/obo/IAO_0000115
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
     synonym_property:
-      - http://www.geneontology.org/formats/oboInOwl#hasExactSynonym
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
     hierarchical_property:
-      - http://purl.obolibrary.org/obo/BFO_0000050
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
     base_uri:
-      - http://purl.obolibrary.org/obo/AERO_
+      - "http://purl.obolibrary.org/obo/ECO_"
+  - title: "Sequence types and features ontology"
+    preferredPrefix: "SO"
+    description: "A structured controlled vocabulary for sequence annotation, for the\
+    \ exchange of annotation data and for the description of sequence objects in databases."
+    homepage: "https://github.com/The-Sequence-Ontology/SO-Ontologies"
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/so.owl"
+    id: "so"
+    mailing_list: "https://sourceforge.net/p/song/mailman/song-devel/"
+    ontology_purl: "http://purl.obolibrary.org/obo/so.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/SO_"
