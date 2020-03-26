@@ -1,5 +1,4 @@
-"@context":
-
+---
 ontologies:
   - title: "Adverse Event Reporting Ontology"
     preferredPrefix: "AERO"
@@ -56,7 +55,7 @@ ontologies:
     uri: "http://purl.obolibrary.org/obo/eo.owl"
     id: "eo"
     mailing_list: null
-    ontology_purl: "http://purl.obolibrary.org/obo/eo.owl"
+    ontology_purl: "file:///opt/ols/eo.owl"
     reasoner: "EL"
     label_property: "http://www.w3.org/2000/01/rdf-schema#label"
     definition_property:
@@ -110,6 +109,49 @@ ontologies:
       - "http://purl.obolibrary.org/obo/BFO_0000050"
     base_uri:
       - "http://purl.obolibrary.org/obo/ECO_"
+  - title: "Ontology for General Medical Science"
+    preferredPrefix: "OGMS"
+    description: "An ontology for representing treatment of disease and diagnosis and\
+    \ on carcinomas and other pathological entities"
+    homepage: "https://github.com/OGMS/ogms"
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/ogms.owl"
+    id: "ogms"
+    mailing_list: null
+    ontology_purl: "http://purl.obolibrary.org/obo/ogms.owl"
+    reasoner: "EL"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/OGMS_"
+  - title: "PHI-base Ontology"
+    preferredPrefix: "PHI"
+    description: "Pathogen-Host Interaction database Ontology used by Ensembl"
+    homepage: null
+    annotations: null
+    oboSlims: false
+    preferredRootTerms: []
+    uri: "http://purl.obolibrary.org/obo/phi"
+    id: "phi"
+    mailing_list: null
+    ontology_purl: "file:///opt/ols/phi.obo"
+    reasoner: "NONE"
+    label_property: "http://www.w3.org/2000/01/rdf-schema#label"
+    definition_property:
+      - "http://purl.obolibrary.org/obo/IAO_0000115"
+    synonym_property:
+      - "http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"
+    hierarchical_property:
+      - "http://purl.obolibrary.org/obo/BFO_0000050"
+    base_uri:
+      - "http://purl.obolibrary.org/obo/PHI_"
   - title: "Sequence types and features ontology"
     preferredPrefix: "SO"
     description: "A structured controlled vocabulary for sequence annotation, for the\

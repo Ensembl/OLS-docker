@@ -5,7 +5,8 @@ ENV JAVA_OPTS "-Xmx1g"
 ENV SOLR_VERSION 5.5.3
 
 ADD ols-config.yaml ${OLS_HOME}
-
+ADD *.owl ${OLS_HOME}
+ADD *.obo ${OLS_HOME}
 ## Start MongoDB
 ### Load configuration into MongoDB
 RUN mongod --smallfiles --fork  --logpath /var/log/mongodb.log \

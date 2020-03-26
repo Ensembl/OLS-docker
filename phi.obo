@@ -1,0 +1,257 @@
+format-version: 5
+date: 26-11-2018 
+saved-by: mcarbajo 
+auto-generated-by: phenotype and experiment specification only
+synonymtypedef: systematic_synonym Systematic synonym EXACT
+default-namespace: phenotype
+ontology: PHI
+
+[Term]
+id: PHI:1000000
+name: phenotype
+namespace: phenotype
+
+[Term]
+id: PHI:2000000
+name: experiment specification
+namespace: experiment_specification
+
+[Term]
+id: PHI:1000001
+name: Chemistry target: phenotype unknown
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000002
+name: Chemistry target: resistance to chemical
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000003
+name: Chemistry target: sensitivity to chemical
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000004
+name: Effector (plant avirulence determinant)
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000005
+name: Enhanced antagonism
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000006
+name: Increased virulence
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000007
+name: Increased virulence (hypervirulence)
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000008
+name: Lethal
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000009
+name: Loss of pathogenicity
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000010
+name: Mixed outcome
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000011
+name: Reduced virulence
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000012
+name: Unaffected pathogenicity
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:1000013
+name: Wild-type mutualism
+namespace: phenotype
+is_a: PHI:1000000
+
+[Term]
+id: PHI:2000001
+name: Altered gene expression
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000002
+name: Biochemical analysis
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000003
+name: Characterised gene mutation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000004
+name: Chemical complementation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000005
+name: Cluster deletion
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000006
+name: Direct injection into host organism
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000007
+name: Full gene deletion
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000008
+name: Functional test in host organism
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000009
+name: Gene complementation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000010
+name: Gene deletion
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000011
+name: Gene disruption
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000012
+name: Gene downregulation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000013
+name: Gene mutation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000014
+name: Gene overexpression
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000015
+name: Gene silencing
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000016
+name: Heterologous expression
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000017
+name: Natural sequence variation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000018
+name: Other evidence
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000019
+name: Partial gene deletion
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000020
+name: Promoter mutation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000021
+name: Sequence analysis
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000022
+name: Sequence analysis of sensitive and resistant strains
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000023
+name: Sequencing of resistance conferring allele
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000024
+name: Sexual cross
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000025
+name: Transient expression in host organism
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000026
+name: Uncharacterised gene mutation
+namespace: experiment_specification
+is_a: PHI:2000000
+
+[Term]
+id: PHI:2000027
+name: Unknown gene expression
+namespace: experiment_specification
+is_a: PHI:2000000
