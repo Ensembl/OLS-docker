@@ -1,35 +1,21 @@
 # Running the EMBL-EBI Ontology Lookup Service with docker
 
 Here's an example of how to build and run your own docker container of the
-[EBI's Ontology Lookup Service](https://www.ebi.ac.uk/ols/) with custom
+[EBI's Ontology Lookup Service](https://www.ebi.ac.uk/ols4/) with custom
 ontologies.
 
 ## Configuration
 
-Edit [ols-config.yaml](ols-config.yaml) with the metadata for each ontology you
-want to load into OLS. An example is provided for loading the data use ontology,
-but any ontology in OBO or OWL format will work.
-
-You can download the configuration in YAML format for one or multiple
-ontologies from EBI OLS API. For example, to download the configuration for AERO
-and EFO ontologies run:
-
-`wget -O ols-config.yaml "https://www.ebi.ac.uk/ols/api/ols-config?ids=aero,efo"`
-
-
-If you want to load an ontology from a local file on disk, add the ontology
-to this directory then set `ontology_purl: file:///opt/ols/<filename>.owl` and
-add `ADD *.owl ${OLS_HOME}` to the Dockerfile before the first `RUN` command.
-Alternately you can use a URL to load an ontology from the web e.g.
-`ontology_purl: http://purl.obolibrary.org/obo/duo.owl`
+Edit [ols-config.json](ols-config.json) with the metadata for each ontology you
+want to load into OLS. Example available ion https://github.com/EBISPOT/ols4/tree/dev/dataload/configs
 
 ## Build the container
 
-`docker build -t ols .`
+`docker build -t ensembl-ols .`
 
 ## Run the container
 
-`docker run -d -p 8080:8080 -t ols`
+`docker run -d -p 8080:8080 -v / -t ensembl-ols`
 
 Access the OLS through your browser on http://localhost:8080
 

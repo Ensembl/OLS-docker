@@ -1,30 +1,20 @@
-FROM simonjupp/ebi-ols:3.2.0
+FROM alpinelinux/docker-compose
 
-ENV OLS_HOME /opt/ols
-ENV JAVA_OPTS "-Xmx1g"
-ENV SOLR_VERSION 5.5.3
+# RUN apk update
+RUN apk --no-cache add git bash # docker-compose
 
-ADD ols-config.yaml ${OLS_HOME}
-ADD *.owl ${OLS_HOME}
-ADD *.obo ${OLS_HOME}
-## Start MongoDB
-### Load configuration into MongoDB
-RUN mongod --smallfiles --fork  --logpath /var/log/mongodb.log \
-    && cd ${OLS_HOME} \
-    && java -Dols.obofoundry.ontology.config=foo.yaml -Dols.ontology.config=file://${OLS_HOME}/ols-config.yaml -jar ${OLS_HOME}/ols-config-importer.jar \
-    && sleep 10
+ENV OLS_HOME /opt/ols/
+RUN mkdir $OLS_HOME
+WORKDIR $OLS_HOME
+RUN git clone --branch stable --depth 1 https://github.com/EBISPOT/ols4.git ${OLS_HOME}
+# ADD configuration files
+ADD ols-config.json ${OLS_HOME}
+ADD phi.obo ${OLS_HOME}
+# set compose CONFIG file path
+ENV OLS4_CONFIG "./ols-config.json"
+# ENV DOCKER_HOST "tcp://docker:2375"
+# ENTRYPOINT ["docker-entrypoint.sh"]
 
-## Start MongoDB and SOLR
-## Build/update the indexes
-RUN mongod --smallfiles --fork --logpath /var/log/mongodb.log \
-  && /opt/solr-${SOLR_VERSION}/bin/solr -Dsolr.solr.home=${OLS_HOME}/solr-5-config/ -Dsolr.data.dir=${OLS_HOME} \
-  && java ${JAVA_OPTS} -Dols.home=${OLS_DATA} -jar ${OLS_HOME}/ols-indexer.jar
-
-## Expose the tomcat port
+CMD ["docker", "compose", "up"]
 EXPOSE 8080
-
-CMD cd ${OLS_HOME} \
-    && mongod --smallfiles --fork --logpath /var/log/mongodb.log \
-    && /opt/solr-${SOLR_VERSION}/bin/solr -Dsolr.solr.home=${OLS_HOME}/solr-5-config/ -Dsolr.data.dir=${OLS_HOME} \
-    && java -jar -Dols.home=${OLS_HOME} ols-boot.war
-
+# CMD ["sh"]
