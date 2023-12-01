@@ -1,0 +1,34 @@
+version: '3'
+services:
+  ols4-dataload:
+    extends:
+      file: ./ols4/docker-compose.yml
+      service: ols4-dataload
+    networks:
+      - ols4-network
+  ols4-solr:
+    extends:
+      file: ./ols4/docker-compose.yml
+      service: ols4-solr
+    networks:
+      - ols4-network
+  ols4-neo4j:
+    extends:
+      file: ./ols4/docker-compose.yml
+      service: ols4-neo4j
+    networks:
+      - ols4-network
+  ols4-backend:
+    extends:
+      file: ./ols4/docker-compose.yml
+      service: ols4-backend
+    networks:
+      - ols4-network
+
+networks:
+  ols4-network:
+    driver: bridge
+
+volumes:
+  ols4-solr-data:
+  ols4-neo4j-data:

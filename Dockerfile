@@ -1,20 +1,21 @@
-FROM alpinelinux/docker-compose
+FROM docker:dind
 
-# RUN apk update
 RUN apk --no-cache add git bash # docker-compose
 
 ENV OLS_HOME /opt/ols/
 RUN mkdir $OLS_HOME
 WORKDIR $OLS_HOME
-RUN git clone --branch stable --depth 1 https://github.com/EBISPOT/ols4.git ${OLS_HOME}
-# ADD configuration files
-ADD ols-config.json ${OLS_HOME}
-ADD phi.obo ${OLS_HOME}
-# set compose CONFIG file path
-ENV OLS4_CONFIG "./ols-config.json"
-# ENV DOCKER_HOST "tcp://docker:2375"
-# ENTRYPOINT ["docker-entrypoint.sh"]
 
-CMD ["docker", "compose", "up"]
+RUN git clone --branch stable --depth 1 https://github.com/EBISPOT/ols4.git ${OLS_HOME}/ols4
+# ADD ols4 $OLS_HOME
+# ADD configuration files
+ADD ols-config.json ${OLS_HOME}/ols4/dataload/configs/
+ADD phi.obo ${OLS_HOME}
+ADD docker-compose.yml ${OLS_HOME}
+ADD entrypoint.sh ${OLS_HOME}
+# set compose CONFIG file path
+ENV OLS4_CONFIG "./dataload/configs/ols-config.json"
+
 EXPOSE 8080
-# CMD ["sh"]
+#ENTRYPOINT ["/opt/ols/entrypoint.sh"]
+CMD ["sh"]
