@@ -11,4 +11,6 @@ while ! docker info; do
   sleep 3
 done
 
-docker compose -f /opt/ols/docker-compose.yml up --quiet-pull -d 2>/dev/null
+docker compose -f /opt/ols/docker-compose.yml up --quiet-pull -d
+
+echo "Services started"
