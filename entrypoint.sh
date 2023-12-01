@@ -11,4 +11,4 @@ while ! docker info; do
   sleep 3
 done
 
-docker compose -f /opt/ols/docker-compose.yml up
+docker compose -f /opt/ols/docker-compose.yml up -d

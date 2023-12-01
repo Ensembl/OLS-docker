@@ -17,5 +17,4 @@ ADD entrypoint.sh ${OLS_HOME}
 ENV OLS4_CONFIG "./dataload/configs/ols-config.json"
 
 EXPOSE 8080
-#ENTRYPOINT ["/opt/ols/entrypoint.sh"]
-CMD ["sh"]
+ENTRYPOINT ["/opt/ols/entrypoint.sh"]

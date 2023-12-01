@@ -11,11 +11,11 @@ want to load into OLS. Example available ion https://github.com/EBISPOT/ols4/tre
 
 ## Build the container
 
-`docker build -t ensembl-ols .`
+`docker build -t ensembl-ols-docker .`
 
 ## Run the container
 
-`docker run -d -p 8080:8080 -v / -t ensembl-ols`
+`docker run -it --privileged ensemblorg/ensembl-ols-docker:latest -p 8080:8080`
 
 Access the OLS through your browser on http://localhost:8080
 
