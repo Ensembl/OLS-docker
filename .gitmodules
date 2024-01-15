@@ -1,4 +1,4 @@
 [submodule "ols4"]
 	path = ols4
-	url = https://github.com/EBISPOT/ols4.git
+	url = https://github.com/Ensembl/ensembl-ols4
 	branch = stable

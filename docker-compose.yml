@@ -5,12 +5,8 @@ services:
       volumes:
         - ols4-solr-data:/opt/solr/server/solr:rw
         - ols4-neo4j-data:/opt/neo4j/data:rw
-        # - ./${OLS4_CONFIG:?OLS4 dataload requires a config file}:/mnt/config.json:ro
         - ./testcases:/opt/dataload/testcases:ro
-        #- ./docker_out:/tmp/out:rw
-      command: ./dataload.dockersh
-      networks:
-        - ols4-network
+      command: ./dataload.dockersh $OLS4_CONFIG /tmp/out
     ols4-solr:
       image: solr:9.0.0
       environment:
@@ -23,8 +19,6 @@ services:
       depends_on:
         ols4-dataload:
           condition: service_completed_successfully
-      networks:
-        - ols4-network
     ols4-neo4j:
       image: neo4j:4.4.9-community
       ports:
@@ -37,8 +31,6 @@ services:
       depends_on:
         ols4-dataload:
           condition: service_completed_successfully
-      networks:
-        - ols4-network
     ols4-backend:
       build: ./backend
       ports:
@@ -52,13 +44,9 @@ services:
       links:
         - ols4-solr
         - ols4-neo4j
-      networks:
-        - ols4-network
 volumes:
     ols4-solr-data:
     ols4-neo4j-data:
 
-networks:
-  ols4-network:
-    driver: bridge
+
 
