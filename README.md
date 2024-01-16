@@ -1,23 +1,26 @@
-# Running the EMBL-EBI Ontology Lookup Service with docker
+# Ensembl OLS4 docker image for automated testing Ensembl OLS client and loader
 
-Here's an example of how to build and run your own docker container of the
-[EBI's Ontology Lookup Service](https://www.ebi.ac.uk/ols4/) with custom
-ontologies.
+### Related repositories 
+
+- https://github.com/Ensembl/ols-client
+- https://github.com/Ensembl/ols-ensembl-loader/
+
+# Running the EMBL-EBI Ontology Lookup Service with docker
 
 ## Configuration
 
-Edit [ols-config.json](ols-config.json) with the metadata for each ontology you
-want to load into OLS. Example available ion https://github.com/EBISPOT/ols4/tree/dev/dataload/configs
+OLS4_CONFIG set the target ontologies definition to load when running the container.
 
 ## Build the container
 
 `docker build -t ensembl-ols-docker .`
 
 ## Run the container
+Assuming the path to your configuration file is "$(PWD)/ols-ensembl-config.json"
 
-`docker run -it --privileged ensemblorg/ensembl-ols-docker:latest -p 8080:8080`
+`docker run -it -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock -v $(PWD)/ols-ensembl-config.json:/mnt/config.json ensemblorg/ensembl-ols-docker:latest`
 
-Access the OLS through your browser on http://localhost:8080
+Access the OLS through your browser on http://localhost:8080/api
 
 ## Updating the data
 
