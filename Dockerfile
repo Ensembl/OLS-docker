@@ -20,7 +20,4 @@ ADD ols-ensembl-config.json ${OLS_HOME}/ols4/dataload/configs/
 ADD docker-compose.yml ${OLS_HOME}/ols4/
 ADD entrypoint.sh ${OLS_HOME}
 EXPOSE 8080
-# CMD ["docker", "compose", "up", "--quiet-pull", "--no-attach", "ols4-dataload"]
-CMD ["/bin/bash"]
-# "| grep ols4"]
-# CMD ["/app/entrypoin1t.sh"]::
+CMD ["/app/entrypoint.sh"]

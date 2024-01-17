@@ -6,7 +6,7 @@ services:
         - ols4-solr-data:/opt/solr/server/solr:rw
         - ols4-neo4j-data:/opt/neo4j/data:rw
         - ./testcases:/opt/dataload/testcases:ro
-      command: ./dataload.dockersh /opt/dataload/configs/ols-ensembl-config.json /tmp/out ${OLS4_DATALOAD_ARGS:-}
+      command: ./dataload.dockersh ${OLS4_CONFIG} /tmp/out ${OLS4_DATALOAD_ARGS:-}
     ols4-solr:
       image: solr:9.0.0
       environment:
