@@ -6,7 +6,7 @@ ENV OLS_HOME /app
 
 RUN mkdir $OLS_HOME
 WORKDIR $OLS_HOME
-
+ADD --keep-git-dir=true https://github.com/EBISPOT/ols4 /buildkit
 RUN git clone -b stable --depth 1 https://github.com/EBISPOT/ols4
 
 # set compose CONFIG file path Tweked to target dataload dockerfile expected path:
