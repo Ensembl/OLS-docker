@@ -1,30 +1,23 @@
-FROM simonjupp/ebi-ols:3.2.0
+FROM docker:24.0-dind
 
-ENV OLS_HOME /opt/ols
-ENV JAVA_OPTS "-Xmx1g"
-ENV SOLR_VERSION 5.5.3
+RUN apk --no-cache add bash git
 
-ADD ols-config.yaml ${OLS_HOME}
-ADD *.owl ${OLS_HOME}
-ADD *.obo ${OLS_HOME}
-## Start MongoDB
-### Load configuration into MongoDB
-RUN mongod --smallfiles --fork  --logpath /var/log/mongodb.log \
-    && cd ${OLS_HOME} \
-    && java -Dols.obofoundry.ontology.config=foo.yaml -Dols.ontology.config=file://${OLS_HOME}/ols-config.yaml -jar ${OLS_HOME}/ols-config-importer.jar \
-    && sleep 10
+ENV OLS_HOME /app
 
-## Start MongoDB and SOLR
-## Build/update the indexes
-RUN mongod --smallfiles --fork --logpath /var/log/mongodb.log \
-  && /opt/solr-${SOLR_VERSION}/bin/solr -Dsolr.solr.home=${OLS_HOME}/solr-5-config/ -Dsolr.data.dir=${OLS_HOME} \
-  && java ${JAVA_OPTS} -Dols.home=${OLS_DATA} -jar ${OLS_HOME}/ols-indexer.jar
+RUN mkdir $OLS_HOME
+WORKDIR $OLS_HOME
+ADD --keep-git-dir=true https://github.com/EBISPOT/ols4 /buildkit
+RUN git clone -b stable --depth 1 https://github.com/EBISPOT/ols4
 
-## Expose the tomcat port
+# set compose CONFIG file path Tweked to target dataload dockerfile expected path:
+ENV OLS4_CONFIG "/opt/dataload/configs/ols-ensembl-config.json"
+ENV COMPOSE_FILE "${OLS_HOME}/ols4/docker-compose.yml"
+ENV DOCKER_HOST "unix:////var/run/docker.sock"
+ENV DOCKER_DRIVER "overlay2"
+
+ADD dataload.dockersh ${OLS_HOME}/ols4/dataload/
+ADD ols-ensembl-config.json ${OLS_HOME}/ols4/dataload/configs/
+ADD docker-compose.yml ${OLS_HOME}/ols4/
+ADD entrypoint.sh ${OLS_HOME}
 EXPOSE 8080
-
-CMD cd ${OLS_HOME} \
-    && mongod --smallfiles --fork --logpath /var/log/mongodb.log \
-    && /opt/solr-${SOLR_VERSION}/bin/solr -Dsolr.solr.home=${OLS_HOME}/solr-5-config/ -Dsolr.data.dir=${OLS_HOME} \
-    && java -jar -Dols.home=${OLS_HOME} ols-boot.war
-
+CMD ["/app/entrypoint.sh"]
